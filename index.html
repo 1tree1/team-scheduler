@@ -1,14 +1,73 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>팀 스케줄 관리</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📅</text></svg>">
-    <script type="module" crossorigin src="./assets/index-To9Cgu5I.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index--dGXUrln.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
+    <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>팀 스케줄 관리</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📅</text></svg>">
+        <script type="module" crossorigin src="./assets/index-To9Cgu5I.js"></script>
+        <link rel="stylesheet" crossorigin href="./assets/index--dGXUrln.css">
+        <style>
+                .app{border-top:4px solid #c00}
+                .brand-header{display:flex;justify-content:center;align-items:center;gap:.5rem;padding:1rem 0 .5rem}
+                .brand-logo{display:flex;align-items:center;gap:.35rem;font-size:.7rem;font-weight:800;letter-spacing:.12em;color:#1a1a1a;text-transform:uppercase}
+                .brand-logo .brand-bar{display:inline-block;width:3px;height:16px;background:#c00;border-radius:1px}
+                .brand-logo .brand-sub{display:block;font-size:.5rem;font-weight:500;letter-spacing:.08em;color:#666}
+                .brand-footer{text-align:center;padding:1.5rem 0 .5rem;font-size:.85rem;font-weight:900;letter-spacing:.15em;color:#1a1a1a;text-transform:uppercase}
+                body{font-family:Pretendard,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif!important;background:#f5f5f5!important;color:#1a1a1a!important}
+                .btn-primary{background:#c00!important;border-radius:4px!important;font-weight:700!important;letter-spacing:.02em}
+                .btn-primary:hover:not(:disabled){background:#a30000!important}
+                .btn-secondary{border-radius:4px!important;font-weight:700!important;color:#1a1a1a!important}
+                .cal-nav{border:2px solid #c00!important;border-radius:4px!important;color:#c00!important;font-weight:700!important;background:#fff!important}
+                .cal-nav:hover{background:#c00!important;color:#fff!important}
+                .cal-title{color:#1a1a1a!important;font-weight:900!important;font-size:1.2rem!important}
+                .cal-weekdays{border-bottom:2px solid #1a1a1a;padding-bottom:6px}
+                .cal-weekday{font-weight:800!important;color:#555!important}
+                .cal-weekday.sun{color:#c00!important}
+                .cal-weekday.sat{color:#1a1a1a!important}
+                .cal-cell{background:#fff!important;border-radius:4px!important}
+                .cal-cell:not(.empty):hover{background:#fff5f5!important;border-color:#c00!important}
+                .cal-cell.selected{background:#fff!important;border-color:#c00!important;box-shadow:0 0 0 1px #c00}
+                .cal-cell.today .cal-day{background:#c00!important;width:26px!important;height:26px!important}
+                .cal-cell.has-event{background:#fff5f5!important;border-color:#c00!important}
+                .cal-day{color:#1a1a1a!important;font-weight:700!important}
+                .cal-summary .avail{color:#1a1a1a!important;font-weight:700!important}
+                .cal-summary .unavail{color:#c00!important;font-weight:700!important}
+                .page-header h1{color:#1a1a1a!important;font-weight:900!important;font-size:1.4rem!important}
+                .user-badge{background:#c00!important;color:#fff!important;border-radius:2px!important}
+                .btn-small{border-radius:4px!important;font-weight:700!important;background:#fff!important;border:2px solid #ddd!important}
+                .btn-small.btn-red{border-color:#c00!important;color:#c00!important;background:#fff!important}
+                .btn-small.btn-red:hover{background:#fff5f5!important}
+                .repeat-option input[type=checkbox]{accent-color:#c00}
+                .save-msg.success{color:#1a1a1a!important}
+                .save-msg.error{color:#c00!important}
+                .tt-row.available .tt-status{color:#1a1a1a!important}
+                .tt-row.unavailable .tt-status{color:#c00!important}
+                .cal-saved-dot{color:#c00!important}
+              </style>
+    </head>
+    <body>
+          <div id="root"></div>div>
+          <script>
+                  var observer = new MutationObserver(function(mutations, obs) {
+                            var app = document.querySelector('.app');
+                            if (app && !document.querySelector('.brand-header')) {
+                                        var header = document.createElement('div');
+                                        header.className = 'brand-header';
+                                        header.innerHTML = '<div class="brand-logo"><span class="brand-bar"></span><span>PONY CHUNG<span class="brand-sub">FOUNDATION</span></span><span class="brand-bar"></span></div>';
+                                        app.insertBefore(header, app.firstChild);
+                                        var footer = document.createElement('div');
+                                        footer.className = 'brand-footer';
+                                        footer.textContent = 'FOMA';
+                                        app.appendChild(footer);
+                                        obs.disconnect();
+                            }
+                  });
+                  observer.observe(document.body, {childList: true, subtree: true});
+          </script>
+    </body>
+</html>html>
+          </script>
+    </body>
+        </style></title>
+    </head>
